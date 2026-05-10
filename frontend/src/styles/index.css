@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: radial-gradient(circle at 10% 20%, #0a0c1a, #030518, #01010f);
+    overflow-x: hidden;
+    color: white;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[rgba(15,25,45,0.4)] backdrop-blur-[12px] border border-[rgba(108,99,255,0.25)] rounded-3xl transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply border-[rgba(108,99,255,0.6)] shadow-[0_20px_40px_rgba(108,99,255,0.2),0_0_15px_rgba(108,99,255,0.3)] -translate-y-1;
+  }
+  
+  .navbar-blur {
+    @apply bg-[rgba(8,12,25,0.7)] backdrop-blur-[16px] border-b border-[rgba(108,99,255,0.2)];
+  }
+  
+  .section-fade {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .section-fade.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-indigo-300 to-violet-400 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-white via-indigo-200 to-violet-300 bg-clip-text text-transparent;
+  }
+  
+  .glow-shadow {
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+  }
+  
+  .step-connector:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: 80%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #6C63FF, #FF6584);
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 768px) {
+    .step-connector:not(:last-child)::after {
+      display: none;
+    }
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.5);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(108, 99, 255, 0.7);
+}
+
+/* Page Content Area */
+main {
+  scroll-behavior: smooth;
+}
+
+/* Glass Card Base */
+.glass-card {
+  background: rgba(15, 25, 45, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(108, 99, 255, 0.6);
+  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.1);
+}
