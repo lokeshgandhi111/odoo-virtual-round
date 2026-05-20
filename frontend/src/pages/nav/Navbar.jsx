@@ -67,7 +67,7 @@ const Navbar = ({ setIsMobileOpen, pageTitle }) => {
   }
 
   return (
-    <nav className="fixed top-0 right-0 left-0 md:left-auto z-40 bg-[rgba(8,12,25,0.8)] backdrop-blur-xl border-b border-[rgba(108,99,255,0.2)]">
+    <nav className="w-full z-40 bg-[rgba(8,12,25,0.8)] backdrop-blur-xl border-b border-[rgba(108,99,255,0.2)]">
       <div className="flex items-center justify-between px-4 md:px-8 py-4">
         {/* Left Section - Mobile Menu & Title */}
         <div className="flex items-center gap-4">

@@ -31,7 +31,6 @@ const menuItems = [
   { path: '/city-search', icon: MapPin, label: 'City Search' },
   { path: '/community', icon: Users, label: 'Community' }, 
   { path: '/checklist', icon: CheckSquare, label: 'Checklist' },
-  { path: '/shared', icon: Share2, label: 'Shared Trips' },
   { path: '/profile', icon: User, label: 'Profile' },
   { path: '/settings', icon: Settings, label: 'Settings' },
 ]
@@ -72,7 +71,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobileOpen })
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className={`fixed left-0 top-0 h-full bg-gradient-to-b from-[rgba(15,25,45,0.95)] to-[rgba(8,12,25,0.98)] backdrop-blur-xl border-r border-[rgba(108,99,255,0.2)] z-50 flex flex-col ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
-        } transition-transform duration-300 md:relative md:translate-x-0`}
+        } transition-transform duration-300 md:translate-x-0`}
         style={{ width: isCollapsed ? '80px' : '280px' }}
       >
         {/* Logo Section */}
